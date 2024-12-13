@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp36
+{ /*
+.
+6. Dizi Elemanlarını Toplayan ve Filtreleme Şartı Ekleyen Metot
+
+Soru: int türünde bir dizi ve bir filtre değeri (int) alan bir metot yazın. Bu metot, filtre değerinden büyük olan tüm elemanları toplasın ve toplamı döndürsün.
+İpucu: int türünde bir metot tanımlayıp foreach döngüsü ile filtreyi uygulayarak toplamı hesaplayabilirsiniz.*/
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] sayilar = { 1,2,3,4,5,10 }; int filtreDegeri = 3; 
+            int toplam = FiltreToplam(sayilar, filtreDegeri); 
+            Console.WriteLine("Filtre değerinden büyük olan sayıların toplamı: " + toplam);
+        }
+        static int FiltreToplam(int[] dizi, int filtre) 
+        { 
+            int toplam = 0; foreach (int sayi in dizi) 
+            { 
+                if (sayi > filtre) 
+                { toplam += sayi; } 
+            } 
+            return toplam;
+        }
+    }
+}
